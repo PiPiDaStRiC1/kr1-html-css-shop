@@ -29,3 +29,9 @@
 
 ФИО: Кротов Артём Игоревич
 Группа: ЭФБО-02-25
+
+## Ссылка на опубликованный проект
+
+GitHub Pages: https://pipidastric1.github.io/kr1-html-css-shop/
+
+
