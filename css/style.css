@@ -41,6 +41,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -49,24 +53,9 @@ body {
   background-color: var(--color-bg);
 }
 
-
-header,
-main,
-footer {
+main {
   padding: var(--space-lg);
 }
-
-header {
-  background-color: var(--color-surface);
-}
-
-footer {
-  background-color: var(--color-surface);
-}
-
-/* ===============================
-   3. Общие элементы интерфейса
-   =============================== */
 
 a {
   color: var(--color-primary);
@@ -81,6 +70,17 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ===============================
+   3. Общие элементы
+   =============================== */
+
 .button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
@@ -93,6 +93,7 @@ a:focus-visible {
 }
 
 .button:hover {
+  color: var(--color-white);
   background-color: var(--color-primary-dark);
 }
 
@@ -106,75 +107,141 @@ a:focus-visible {
   cursor: not-allowed;
 }
 
+/* ===============================
+   4. БЭМ: шапка и навигация
+   =============================== */
+
 .site-header {
-  max-width: 1100px;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-/*
-  Оформляем текстовый логотип.
-*/
-.site-logo {
+.site-header__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+
+  /* 11. Flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.site-header__logo {
+  flex-shrink: 0;
   font-weight: bold;
   text-decoration: none;
-  color: #222222;
+  color: var(--color-text);
 }
 
-/*
-  Убираем стандартные отступы и маркеры списка навигации.
-*/
 .site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
   padding: 0;
-  margin: 16px 0 0;
+  margin: 0;
   list-style: none;
 }
 
-/*
-  Добавляем расстояние между пунктами меню.
-*/
-.site-nav__list li {
-  margin-bottom: 8px;
+.site-nav__item {
+  margin: 0;
 }
 
-/*
-  Оформляем ссылки меню.
-*/
-.site-nav__list a {
-  color: #0057b8;
+.site-nav__link {
+  color: var(--color-primary);
   text-decoration: none;
 }
 
-/*
-  При наведении мыши подчёркиваем ссылку.
-  Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
-*/
-.site-nav__list a:hover {
+.site-nav__link:hover {
   text-decoration: underline;
 }
 
 /* ===============================
-   4. Компоненты страницы
+   5. БЭМ: главная секция
    =============================== */
 
 .hero {
+  position: relative; /* 13. Точка отсчёта для absolute-элемента */
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-xl) var(--space-lg);
   background-color: var(--color-surface-accent);
   border-radius: var(--radius-lg);
+  overflow: hidden;
 }
+
+.hero__badge {
+  position: absolute; /* 13. Absolute относительно .hero */
+  top: var(--space-md);
+  right: var(--space-md);
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hero__title {
+  margin-top: 0;
+  padding-right: 150px;
+}
+
+.hero__description {
+  max-width: 760px;
+}
+
+.hero__button {
+  margin-top: var(--space-sm);
+}
+
+/* ===============================
+   6. Секции и преимущества
+   =============================== */
 
 .section {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
 }
 
-.section h2 {
+.section__title {
   margin-top: 0;
 }
 
+.advantages-list {
+  display: flex; /* 11. Flexbox */
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.advantages-list__item {
+  flex: 1 1 220px;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+/* ===============================
+   7. Карточки товаров
+   =============================== */
+
+.product-list {
+  display: grid; /* 11. CSS Grid */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
 .product-card {
-  margin-bottom: var(--space-md);
+  display: flex; /* Flexbox внутри карточки */
+  flex-direction: column;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -185,9 +252,26 @@ a:focus-visible {
   border-color: var(--color-primary);
 }
 
-.product-card h3 {
+.product-card__title {
   margin-top: 0;
 }
+
+.product-card__description {
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__price {
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.product-card__button {
+  align-self: flex-start;
+}
+
+/* ===============================
+   8. Дополнительный блок
+   =============================== */
 
 .aside-info {
   max-width: var(--container-width);
@@ -197,8 +281,12 @@ a:focus-visible {
   background-color: var(--color-surface);
 }
 
+.aside-info__title {
+  margin-top: 0;
+}
+
 /* ===============================
-   5. Форма и модальное окно
+   9. Форма и модальное окно
    =============================== */
 
 .order-dialog {
@@ -259,10 +347,101 @@ a:focus-visible {
   border-color: var(--color-danger);
 }
 
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+/* ===============================
+   10. Сообщение и footer
+   =============================== */
+
 .success-message {
   max-width: var(--container-width);
   margin: var(--space-lg) auto;
   padding: var(--space-md);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
+}
+
+.site-footer {
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+.site-footer__text {
+  margin: var(--space-xs) 0;
+}
+
+/* ===============================
+   11. Fixed-позиционирование
+   =============================== */
+
+.support-button {
+  position: fixed; /* 13. Элемент закреплён относительно окна браузера */
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 20;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.support-button:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary-dark);
+}
+
+/* ===============================
+   12. Адаптивность
+   =============================== */
+
+@media (max-width: 800px) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__title {
+    padding-right: 0;
+  }
+
+  .hero__badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: var(--space-md);
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    padding: var(--space-md);
+  }
+
+  .site-header {
+    padding: var(--space-md);
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .support-button {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
 }
