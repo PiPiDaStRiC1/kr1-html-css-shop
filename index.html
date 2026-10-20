@@ -1,166 +1,119 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Учебный интернет-магазин">
-    <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-    <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
-
-    <title>Учебный интернет-магазин</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopProject — учебный интернет-магазин с подборкой полезных товаров.">
+  <title>ShopProject — учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
-
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">
-              Главная
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
-          </li>
+          <li><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+          <li><a class="site-nav__link" href="#reviews">Отзывы</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-    <main>
-      <section class="hero">
-        <h1>Учебный интернет-магазин</h1>
-        <p>
-          Это стартовая страница учебного frontend-проекта.
-          В дальнейшем на её основе будет разработан многостраничный сайт
-          интернет-магазина или каталога услуг.
-        </p>
-        <a class="button" href="#popular">Перейти к товарам</a>
-      </section>
-      <section class="section" id="advantages">
-        <h2>Преимущества проекта</h2>
+  <main>
+    <section class="hero">
+      <p class="section__eyebrow">Умный выбор каждый день</p>
+      <h1>Товары, которые делают обычные вещи проще.</h1>
+      <p>Собрали небольшую коллекцию полезных решений для учебы, дома и работы — с понятными характеристиками и честными ценами.</p>
+      <a class="button" href="#popular">Смотреть подборку</a>
+    </section>
 
-        <ul class="advantages-list">
-          <li>понятная HTML-структура;</li>
-          <li>семантические блоки страницы;</li>
-          <li>подключение внешнего CSS-файла;</li>
-          <li>подготовка к разработке многостраничного сайта.</li>
-        </ul>
-      </section>
-      <section class="section" id="popular">
-        <h2>Популярные товары</h2>
+    <section class="section" id="advantages">
+      <p class="section__eyebrow">Почему мы</p>
+      <h2>Покупать проще, когда всё по делу</h2>
+      <ul class="advantages-list">
+        <li>Понятные характеристики без лишнего текста</li>
+        <li>Подборка проверенных учебных товаров</li>
+        <li>Быстрая заявка в пару кликов</li>
+        <li>Поддержка на каждом этапе выбора</li>
+      </ul>
+    </section>
 
-        <div class="products-grid">
-          <article class="product-card product-card--featured">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 1"
-            >
-              Заказать
-            </button>
-          </article>
+    <section class="section" id="popular">
+      <div class="section__heading">
+        <div><p class="section__eyebrow">Хиты недели</p><h2>Популярные товары</h2></div>
+        <a href="catalog.html">Весь каталог →</a>
+      </div>
+      <div class="products-grid">
+        <article class="product-card product-card--featured" data-product-id="focus">
+          <span class="product-card__badge">Хит продаж</span>
+          <h3 class="product-card__title">Органайзер «Фокус»</h3>
+          <p class="product-card__description">Компактный набор для рабочего стола.</p>
+          <p class="product-card__meta">В наличии · 4.9 ★</p>
+          <p class="product-card__price">1 490 ₽</p>
+          <button class="button product-card__button" type="button" data-product="Органайзер «Фокус»">Заказать</button>
+        </article>
+        <article class="product-card product-card--featured" data-product-id="mayak">
+          <span class="product-card__badge">Новинка</span>
+          <h3 class="product-card__title">Лампа «Маяк»</h3>
+          <p class="product-card__description">Мягкий свет и три режима яркости.</p>
+          <p class="product-card__meta">В наличии · 4.8 ★</p>
+          <p class="product-card__price">2 790 ₽</p>
+          <button class="button product-card__button" type="button" data-product="Лампа «Маяк»">Заказать</button>
+        </article>
+        <article class="product-card product-card--discount" data-product-id="rhythm">
+          <span class="product-card__badge product-card__badge--sale">−20% сегодня</span>
+          <h3 class="product-card__title">Термокружка «Ритм»</h3>
+          <p class="product-card__description">Сохраняет тепло до 6 часов.</p>
+          <p class="product-card__meta">Осталось 7 шт. · 4.7 ★</p>
+          <p class="product-card__price">1 190 ₽ <span class="product-card__old-price">1 490 ₽</span></p>
+          <button class="button product-card__button" type="button" data-product="Термокружка «Ритм»">Заказать</button>
+        </article>
+      </div>
+    </section>
 
-          <article class="product-card product-card--featured">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 1"
-            >
-              Заказать
-            </button>
-          </article>
+    <section class="section" id="faq">
+      <p class="section__eyebrow">Есть вопрос?</p>
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq-list">
+        <details open><summary>Как оформить заказ?</summary><p>Откройте карточку нужного товара и нажмите «Заказать». В форме укажите имя и актуальный e-mail, после чего отправьте заявку. Мы проверим наличие, уточним детали и свяжемся с вами для подтверждения заказа.</p></details>
+        <details><summary>Какие способы доставки доступны?</summary><p>Способ и стоимость доставки согласуются после подтверждения заказа с учетом города и состава покупки. Для учебной версии сайта заявка демонстрирует первый этап оформления, поэтому реальная доставка пока не рассчитывается автоматически.</p></details>
+        <details><summary>Как можно оплатить заказ?</summary><p>После подтверждения заказа менеджер сообщит доступные способы оплаты и итоговую сумму. Не переводите деньги до согласования состава заказа, наличия товаров и условий получения.</p></details>
+        <details><summary>Можно ли вернуть или обменять товар?</summary><p>Если товар не подошел или пришел с недостатком, свяжитесь с поддержкой и укажите номер заявки. Условия возврата и обмена зависят от состояния товара и действующих правил магазина; мы подскажем дальнейшие шаги.</p></details>
+        <details><summary>Что делать, если товара нет в наличии?</summary><p>Оставьте заявку на похожий товар или напишите нам через страницу контактов. Мы уточним ближайшее поступление, предложим аналогичные модели и поможем подобрать вариант в нужном бюджете.</p></details>
+      </div>
+    </section>
 
-          <article class="product-card product-card--featured">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 1"
-            >
-              Заказать
-            </button>
-          </article>
-        </div>
-      </section>
-      <aside class="aside-info">
-        <h2>Информация для студентов</h2>
-        <p>
-          На следующих практических занятиях этот проект будет расширяться:
-          появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-          БЭМ-структура и адаптивная версия сайта.
-        </p>
-      </aside>
-    </main>
+    <section class="section" id="reviews">
+      <p class="section__eyebrow">Нам доверяют</p>
+      <h2>Отзывы покупателей</h2>
+      <div class="reviews-grid">
+        <article class="review-card"><div class="review-card__rating" aria-label="5 из 5">★★★★★</div><p class="review-card__text">«Заказала органайзер для домашнего рабочего места. В карточке были указаны размеры, поэтому он идеально подошел к столу. Заявку подтвердили в тот же день.»</p><p class="review-card__author">— Анна, Москва</p></article>
+        <article class="review-card"><div class="review-card__rating" aria-label="5 из 5">★★★★★</div><p class="review-card__text">«Понравилась лампа: три режима яркости действительно удобны для учебы вечером. Отдельно спасибо за подробное описание и быстрый ответ менеджера.»</p><p class="review-card__author">— Михаил, Санкт-Петербург</p></article>
+        <article class="review-card"><div class="review-card__rating" aria-label="4 из 5">★★★★☆</div><p class="review-card__text">«Термокружка хорошо держит тепло, крышка не протекает. Поставил четыре звезды только потому, что хотелось бы больше вариантов цвета.»</p><p class="review-card__author">— Ирина, Казань</p></article>
+        <article class="review-card"><div class="review-card__rating" aria-label="5 из 5">★★★★★</div><p class="review-card__text">«Заказывал рюкзак для ноутбука. Он легкий, отделение подходит для моего 15-дюймового устройства, молнии работают плавно. Покупкой доволен.»</p><p class="review-card__author">— Дмитрий, Екатеринбург</p></article>
+        <article class="review-card"><div class="review-card__rating" aria-label="5 из 5">★★★★★</div><p class="review-card__text">«Блокнот выглядит аккуратно, бумага плотная, чернила не просвечивают. Удобно, что в каталоге можно сразу отфильтровать товары по цене.»</p><p class="review-card__author">— Ольга, Нижний Новгород</p></article>
+        <article class="review-card"><div class="review-card__rating" aria-label="4 из 5">★★★★☆</div><p class="review-card__text">«Диффузор приехал хорошо упакованным, аромат мягкий и не слишком резкий. Хотелось бы добавить к карточке информацию о примерной площади помещения.»</p><p class="review-card__author">— Елена, Краснодар</p></article>
+      </div>
+    </section>
+  </main>
 
-    <footer id="contacts">
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-    </footer>
+  <footer id="contacts"><p>© 2026 ShopProject · Учебный frontend-проект</p><p><a href="contacts.html">Контакты и обратная связь</a></p></footer>
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
 
-    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-
-      <form class="order-form" id="order-form" action="#" method="post" novalidate>
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-name">Имя</label>
-          <input
-            class="order-form__input"
-            id="order-name"
-            name="name"
-            type="text"
-            required
-          >
-        </div>
-
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-email">E-mail</label>
-          <input
-            class="order-form__input"
-            id="order-email"
-            name="email"
-            type="email"
-            required
-          >
-        </div>
-
-        <div class="order-form__actions">
-          <button class="button button--primary" type="submit">
-            Отправить заявку
-          </button>
-
-          <button class="button button--secondary" type="button">
-            Закрыть
-          </button>
-        </div>
-      </form>
-    </dialog>
-
-    <p class="success-message" id="success-message" hidden>
-      Форма успешно отправлена!
-    </p>
-
-  </body>
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="product" type="hidden">
+      <div class="order-form__field"><label class="order-form__label" for="order-name">Имя</label><input class="order-form__input" id="order-name" name="name" type="text" required></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-email">E-mail</label><input class="order-form__input" id="order-email" name="email" type="email" required></div>
+      <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" id="close-order-dialog" type="button">Закрыть</button></div>
+    </form>
+  </dialog>
+  <p class="success-message" id="success-message" hidden>Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p>
+</body>
 </html>

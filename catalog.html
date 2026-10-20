@@ -1,121 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
-
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Расширенный каталог товаров ShopProject.">
+  <title>Каталог — ShopProject</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+  <header class="site-header"><div class="site-header__inner">
+    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list">
+      <li><a class="site-nav__link" href="index.html">Главная</a></li><li><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li><li><a class="site-nav__link" href="contacts.html">Контакты</a></li><li><a class="site-nav__link" href="index.html#faq">FAQ</a></li><li><a class="site-nav__link" href="index.html#reviews">Отзывы</a></li>
+    </ul></nav>
+  </div></header>
   <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
-    </nav>
-
-    <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
-      </p>
-    </section>
-
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span class="breadcrumbs__current">Каталог</span></nav>
+    <section class="section"><p class="section__eyebrow">Коллекция ShopProject</p><h1>Каталог товаров</h1><p>Фильтруйте подборку по назначению и цене. В каждой карточке — характеристики, наличие и оценка покупателей.</p></section>
     <section class="catalog-layout">
-    <aside class="catalog-filters">
+      <aside class="catalog-filters">
         <h2>Фильтры</h2>
-
         <form class="filters-form" action="#" method="get">
-        <fieldset>
-            <legend>Категория</legend>
-
-            <label>
-            <input type="checkbox" name="category" value="all">
-            Все товары
-            </label>
-
-            <label>
-            <input type="checkbox" name="category" value="popular">
-            Популярные
-            </label>
-
-            <label>
-            <input type="checkbox" name="category" value="new">
-            Новинки
-            </label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Цена</legend>
-
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-        </fieldset>
-
-        <button class="button" type="submit">Применить</button>
+          <fieldset><legend>Категория</legend><label><input type="checkbox" name="category" value="all"> Все товары</label><label><input type="checkbox" name="category" value="popular"> Популярные</label><label><input type="checkbox" name="category" value="new"> Новинки</label><label><input type="checkbox" name="category" value="home"> Для дома</label></fieldset>
+          <fieldset><legend>Цена, ₽</legend><label for="price-from">От</label><input id="price-from" name="price-from" type="number" min="0" placeholder="0"><label for="price-to">До</label><input id="price-to" name="price-to" type="number" min="0" placeholder="5000"></fieldset>
+          <div class="filter-actions"><button class="button" type="submit">Применить</button><button class="button button--ghost filters-form__reset" type="button">Сбросить</button></div>
         </form>
-    </aside>
-
-    <section class="catalog-products">
-        <h2>Список товаров</h2>
-
+      </aside>
+      <section class="catalog-products"><div class="section__heading"><div><h2>Список товаров</h2></div></div>
         <div class="products-grid">
-            <article class="product-card">
-                <h3>Товар 1</h3>
-                <p>Краткое описание учебного товара.</p>
-                <p>Цена: 1000 руб.</p>
-                <a class="button" href="index.html#popular">Подробнее</a>
-            </article>
-
-            <article class="product-card">
-                <h3>Товар 2</h3>
-                <p>Краткое описание учебного товара.</p>
-                <p>Цена: 1500 руб.</p>
-                <a class="button" href="index.html#popular">Подробнее</a>
-            </article>
-
-            <article class="product-card">
-                <h3>Товар 3</h3>
-                <p>Краткое описание учебного товара.</p>
-                <p>Цена: 2000 руб.</p>
-                <a class="button" href="index.html#popular">Подробнее</a>
-            </article>
-        </div>
-    </section>
+          <article class="product-card product-card--featured" data-product-id="focus" data-category="popular home" data-price="1490"><img class="product-card__visual" src="https://images.unsplash.com/photo-1616627561950-9f746e330187?auto=format&fit=crop&w=700&q=80" alt="Деревянный органайзер на рабочем столе"><span class="product-card__badge">Популярное</span><h3 class="product-card__title">Органайзер «Фокус»</h3><p class="product-card__description">Модульный органайзер для порядка на столе.</p><p class="product-card__meta">Береза · 4.9 ★ · в наличии</p><p class="product-card__price">1 490 ₽</p>          <a class="button product-card__button" href="item.html?product=focus">Подробнее</a></article>
+          <article class="product-card product-card--discount" data-product-id="rhythm" data-category="popular home" data-price="1190"><img class="product-card__visual" src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Стальная термокружка с горячим напитком"><span class="product-card__badge product-card__badge--sale">Скидка 20%</span><h3 class="product-card__title">Термокружка «Ритм»</h3><p class="product-card__description">Стальная кружка с герметичной крышкой.</p><p class="product-card__meta">450 мл · 4.7 ★ · 7 шт.</p><p class="product-card__price">1 190 ₽ <span class="product-card__old-price">1 490 ₽</span></p>          <a class="button product-card__button" href="item.html?product=rhythm">Подробнее</a></article>
+          <article class="product-card product-card--compact" data-product-id="mayak" data-category="new home" data-price="2790"><img class="product-card__visual" src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Настольная лампа на рабочем столе"><span class="product-card__badge">Новинка</span><h3 class="product-card__title">Лампа «Маяк»</h3><p class="product-card__description">Настольная лампа с USB-C и таймером.</p><p class="product-card__meta">3 режима · 4.8 ★ · в наличии</p><p class="product-card__price">2 790 ₽</p>          <a class="button product-card__button" href="item.html?product=mayak">Подробнее</a></article>
+          <article class="product-card" data-product-id="plan" data-category="new" data-price="890"><img class="product-card__visual" src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=700&q=80" alt="Открытый блокнот с ручкой"><span class="product-card__badge">Новинка</span><h3 class="product-card__title">Блокнот «План»</h3><p class="product-card__description">Недатированный планер на 96 страниц.</p><p class="product-card__meta">A5 · 4.6 ★ · в наличии</p><p class="product-card__price">890 ₽</p>          <a class="button product-card__button" href="item.html?product=plan">Подробнее</a></article>
+          <article class="product-card" data-product-id="evening" data-category="home" data-price="2190"><img class="product-card__visual" src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80" alt="Ароматический диффузор в интерьере"><span class="product-card__badge">Для дома</span><h3 class="product-card__title">Диффузор «Тихий вечер»</h3><p class="product-card__description">Легкий аромат хвои и цитруса.</p><p class="product-card__meta">100 мл · 4.8 ★ · в наличии</p><p class="product-card__price">2 190 ₽</p>          <a class="button product-card__button" href="item.html?product=evening">Подробнее</a></article>
+          <article class="product-card product-card--compact" data-product-id="route" data-category="popular" data-price="3490"><img class="product-card__visual" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Городской рюкзак на фоне стены"><span class="product-card__badge">Популярное</span><h3 class="product-card__title">Рюкзак «Маршрут»</h3><p class="product-card__description">Легкий рюкзак с отделением для ноутбука.</p><p class="product-card__meta">20 л · 4.9 ★ · 3 цвета</p><p class="product-card__price">3 490 ₽</p>          <a class="button product-card__button" href="item.html?product=route">Подробнее</a></article>
+          <article class="product-card" data-product-id="angle" data-category="new home" data-price="1590"><img class="product-card__visual" src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=700" alt="Ноутбук на рабочем столе с подставкой"><span class="product-card__badge">Новинка</span><h3 class="product-card__title">Подставка «Угол»</h3><p class="product-card__description">Эргономичная подставка для ноутбука.</p><p class="product-card__meta">Алюминий · 4.8 ★ · в наличии</p><p class="product-card__price">1 590 ₽</p>          <a class="button product-card__button" href="item.html?product=angle">Подробнее</a></article>
+          <article class="product-card product-card--discount" data-product-id="break" data-category="popular home" data-price="990"><img class="product-card__visual" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Набор для чайного перерыва"><span class="product-card__badge product-card__badge--sale">Выгодная цена</span><h3 class="product-card__title">Набор «Перерыв»</h3><p class="product-card__description">Чай, печенье и открытка для короткого отдыха.</p><p class="product-card__meta">3 позиции · 4.7 ★ · в наличии</p><p class="product-card__price">990 ₽</p>          <a class="button product-card__button" href="item.html?product=break">Подробнее</a></article>
+          <article class="product-card product-card--compact" data-product-id="point" data-category="new" data-price="2490"><img class="product-card__visual" src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=700&q=80" alt="Беспроводные наушники"><span class="product-card__badge">Новинка</span><h3 class="product-card__title">Наушники «Точка»</h3><p class="product-card__description">Беспроводная гарнитура для учебы и звонков.</p><p class="product-card__meta">До 20 ч · 4.6 ★ · в наличии</p><p class="product-card__price">2 490 ₽</p>          <a class="button product-card__button" href="item.html?product=point">Подробнее</a></article>
+        </div><p class="filter-empty" hidden>По выбранным параметрам ничего не найдено. Попробуйте изменить фильтры.</p>
+      </section>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+  <footer><p>© 2026 ShopProject · Учебный frontend-проект</p><p><a href="contacts.html">Контакты и обратная связь</a></p></footer>
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
 </body>
 </html>

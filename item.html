@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробная информация об органайзере «Фокус».">
+  <title>Органайзер «Фокус» — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="site-header__inner">
+    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list">
+      <li><a class="site-nav__link" href="index.html">Главная</a></li>
+      <li><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+      <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+      <li><a class="site-nav__link" href="index.html#faq">FAQ</a></li>
+      <li><a class="site-nav__link" href="index.html#reviews">Отзывы</a></li>
+    </ul></nav>
+  </div></header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a><span class="breadcrumbs__current"><a href="catalog.html">Каталог</a> / Органайзер «Фокус»</span>
+    </nav>
+    <section class="product-detail" aria-labelledby="product-title">
+      <img class="product-detail__image" src="https://images.unsplash.com/photo-1616627561950-9f746e330187?auto=format&fit=crop&w=1000&q=85" alt="Деревянный органайзер «Фокус» на рабочем столе">
+      <div>
+        <span class="product-card__badge">Хит продаж</span>
+        <h1 class="product-detail__title" id="product-title">Органайзер «Фокус»</h1>
+        <p class="product-detail__description">Модульный органайзер из светлой березы помогает собрать ручки, заметки и небольшие аксессуары в одном месте. Подходит для рабочего стола дома или в офисе.</p>
+        <dl class="product-specs">
+          <dt>Материал</dt><dd>Березовая фанера</dd>
+          <dt>Размер</dt><dd>28 × 18 × 8 см</dd>
+          <dt>Оценка</dt><dd>4.9 из 5 ★</dd>
+          <dt>Наличие</dt><dd>В наличии</dd>
+        </dl>
+        <p class="product-detail__price">1 490 ₽</p>
+        <div class="product-detail__actions">
+          <button class="button button--primary product-card__button" type="button" data-product="Органайзер «Фокус»">Заказать</button>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© 2026 ShopProject · Учебный frontend-проект</p><p><a href="contacts.html">Контакты и обратная связь</a></p></footer>
+  <button class="back-to-top" type="button" aria-label="Наверх">↑</button>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="product" type="hidden">
+      <div class="order-form__field"><label class="order-form__label" for="order-name">Имя</label><input class="order-form__input" id="order-name" name="name" type="text" required></div>
+      <div class="order-form__field"><label class="order-form__label" for="order-email">E-mail</label><input class="order-form__input" id="order-email" name="email" type="email" required></div>
+      <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" id="close-order-dialog" type="button">Закрыть</button></div>
+    </form>
+  </dialog>
+  <p class="success-message" id="success-message" hidden>Заявка отправлена! Мы свяжемся с вами в ближайшее время.</p>
+</body>
+</html>
